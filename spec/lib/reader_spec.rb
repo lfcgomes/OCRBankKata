@@ -58,20 +58,20 @@ describe 'My behaviour' do
     r.grave.should eq("123456789")
   end
 
-  # it 'should be equal to 111111111' do
-  #   r = Reader.new('spec/111.txt')
-  #   r.grave.should eq("111111111")
-  # end
-  #
-  # it 'should be equal to 555555555' do
-  #   r = Reader.new('spec/555.txt')
-  #   r.grave.should eq("555555555")
-  # end
-  #
-  # it 'should be equal to 999999999' do
-  #   r = Reader.new('spec/999.txt')
-  #   r.grave.should eq("999999999")
-  # end
+  it 'should be equal to 111111111' do
+    r = Reader.new('spec/111.txt')
+    r.grave.should eq("111111111 ERR")
+  end
+
+  it 'should be equal to 555555555' do
+    r = Reader.new('spec/555.txt')
+    r.grave.should eq("555555555 ERR")
+  end
+
+  it 'should be equal to 999999999' do
+    r = Reader.new('spec/999.txt')
+    r.grave.should eq("999999999 ERR")
+  end
 
   it 'should be equal to 000000051' do
     r = Reader.new('spec/051.txt')
