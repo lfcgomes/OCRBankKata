@@ -42,14 +42,22 @@ class Reader
       c << interpret_number(letter).to_s
       i+=1
     end
-    c << " ILL" if c.include?("?")
+    if c.include?("?")
+      c << " ILL"
+    else
+      c << " ERR" if checksum(c) != 0
+    end
     c
   end
 
-  def chucksum(number_string)
-    
-  end
-
+  def checksum(number_string)
+    i = 0
+    counter = 0
+    while i < 9
+      counter += number_string[i].to_i*(9-i)
+      i+=1
+    end
+    counter%11
   end
 
 end
