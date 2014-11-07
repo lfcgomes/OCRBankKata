@@ -6,7 +6,7 @@ f_line = string_number[0..2]
 s_line = string_number[3..5]
 l_line = string_number[6..8]
 
-r = Reader.new('acc_number.txt')
+r = Reader.new('../spec/acc_number.txt')
 r.grave
 
 NUMBERS = [
@@ -20,3 +20,9 @@ NUMBERS = [
 c = "ola"
 
 puts c.include?("o")
+
+
+
+
+calc = 4*9+5*8+7*7+5*6+0*5+8*4+0*3+0*2+0*1
+puts calc%11

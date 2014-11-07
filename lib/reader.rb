@@ -46,4 +46,10 @@ class Reader
     c
   end
 
+  def chucksum(number_string)
+    
+  end
+
+  end
+
 end
