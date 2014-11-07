@@ -23,7 +23,7 @@ class Reader
     end
   end
 
-  def grave
+  def joinstring
     i = 0
     c = ""
     until i > 8 do
@@ -34,12 +34,16 @@ class Reader
       c << interpret_number(letter).to_s
       i+=1
     end
-    if c.include?("?")
-      c << " ILL"
-    else
-      c << " ERR" if checksum(c) != 0
-    end
     c
+  end
+
+  def addstatus(number)
+    if number.include?("?")
+      number << " ILL"
+    else
+      number << " ERR" if checksum(number) != 0
+    end
+    number
   end
 
   def checksum(number_string)
@@ -50,6 +54,10 @@ class Reader
       i+=1
     end
     counter%11
+  end
+
+  def grave
+    addstatus(joinstring())
   end
 
 end
